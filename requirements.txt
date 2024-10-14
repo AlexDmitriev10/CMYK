@@ -1,0 +1,9 @@
+blinker
+click
+Flask
+itsdangerous
+Jinja2
+MarkupSafe
+numpy
+pillow
+Werkzeug

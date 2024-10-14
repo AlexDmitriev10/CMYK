@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расчет стоимости печати</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script>
+        function showLoading() {
+            document.getElementById("loading").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Загрузка изображения для расчета стоимости печати</h1>
+
+        <form action="/" method="POST" enctype="multipart/form-data" onsubmit="showLoading()">
+            <div class="form-group">
+                <label for="image">Выберите изображение:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cyan">Стоимость Cyan:</label>
+                <input type="number" step="0.01" id="cyan" name="cyan" required>
+            </div>
+
+            <div class="form-group">
+                <label for="magenta">Стоимость Magenta:</label>
+                <input type="number" step="0.01" id="magenta" name="magenta" required>
+            </div>
+
+            <div class="form-group">
+                <label for="yellow">Стоимость Yellow:</label>
+                <input type="number" step="0.01" id="yellow" name="yellow" required>
+            </div>
+
+            <div class="form-group">
+                <label for="black">Стоимость Black:</label>
+                <input type="number" step="0.01" id="black" name="black" required>
+            </div>
+
+            <input type="submit" value="Рассчитать стоимость" class="submit-btn">
+        </form>
+    </div>
+
+
+    <div id="loading" class="loading">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Пожалуйста, подождите. Расчет стоимости...</p>
+        </div>
+    </div>
+</body>
+</html>

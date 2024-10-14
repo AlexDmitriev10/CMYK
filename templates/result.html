@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты расчета</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Результаты расчета стоимости печати</h1>
+        <p>Итоговая стоимость печати: {{ "{:.2f}".format(total_cost) }} руб.</p>
+        <p>Использование Cyan: {{ "{:.3f}".format(c_usage * 100) }}%</p>
+        <p>Использование Magenta: {{ "{:.3f}".format(m_usage * 100) }}%</p>
+        <p>Использование Yellow: {{ "{:.3f}".format(y_usage * 100) }}%</p>
+        <p>Использование Black: {{ "{:.3f}".format(k_usage * 100) }}%</p>
+        <br>
+        <a href="/" class="submit-btn">Назад</a>
+    </div>
+</body>
+</html>
